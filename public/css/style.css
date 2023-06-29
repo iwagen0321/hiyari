@@ -1,0 +1,171 @@
+
+th,td {
+    border: solid green 3px;   
+    padding: 20px;          
+}
+
+th {
+    background-color: rgb(120, 196, 121);
+    font-size:larger;
+}
+
+td{
+    font-size:large;
+}
+ 
+table {
+    border-collapse:  collapse;  
+    width: 80%;  
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+.complete{
+    background-color:lightblue;
+}
+
+
+
+
+#res1:has(input#response:checked)
+~#res2{
+    display: none;
+}
+
+.radio{
+    display:inline-block;
+    font-weight: bold;
+}
+
+.buttons{
+    display:inline-block;
+    margin: 0 5px;
+}
+
+.title{
+    display: inline-block;
+}
+
+.title-back{
+    padding: 10px;
+    font-size: large;
+    background-color: lightblue;
+    border: solid blue 2px;
+}
+
+.body{
+    padding: 30px;
+    margin-top: 10px;
+    font-size: large;
+    border: solid blue 2px;
+}
+
+.responder-back {
+    margin-top: 30px;
+    padding: 10px;
+    font-size: large;
+    background-color: lightpink;
+    border: solid red 2px;
+}
+
+.response-body{
+    padding: 30px;
+    margin-top: 10px;
+    font-size: large;
+    border: solid red 2px;
+}
+
+.image{
+    margin: 0 auto;
+    max-height:300px;
+}
+
+.loca{
+    width: 50%;
+}
+
+.date{
+    width: 30%;
+}
+
+.res{
+    width: 20%;
+}
+
+@media(min-width:671px) {
+
+    input.location-text{
+        border-radius: 10px;
+        width: 50%;
+    }
+    
+    textarea.plan{
+        border-radius: 10px;
+        width: 85%;
+    }
+
+    .form-buttons{
+        position: relative;
+        top: 87px;
+        left: 380px;
+    }
+
+    form.form{
+        width: 700px;
+    }
+
+    .float{
+        float: right;
+    }
+
+    .position{
+        position: absolute;
+        top: 180px;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+    
+
+   
+}
+
+@media(max-width:670px) {
+
+    input.location-text{
+        border-radius: 10px;
+        width: 100%;
+    }
+    
+    textarea.plan{
+        border-radius: 10px;
+        width: 100%;
+    }
+
+
+    .form-buttons {
+        margin-top: 30px;
+    }
+
+    .no{
+        display: none;
+    }
+
+    .float{
+        float: none;
+    }
+
+    .position{
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+
+}
+
+
+
+
+
+
