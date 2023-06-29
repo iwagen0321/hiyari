@@ -28,10 +28,10 @@
 
                 <div class="form-buttons">
                     <div class="buttons">
-                        <x-primary-button class="bg-green-700">{{$button}}</x-primary-button>
+                        <x-cancel-button>キャンセル</x-cancel-button>
                     </div>
                     <div class="buttons">
-                        <x-cancel-button>キャンセル</x-cancel-button>
+                        <x-primary-button class="bg-green-700">{{$button}}</x-primary-button>
                     </div>
                 </div>
 

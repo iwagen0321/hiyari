@@ -28,16 +28,16 @@
                 
                     <div>
                         <div class="buttons">
-                            <a href="{{route('post.edit',$post)}}">
-                                <x-primary-button class="bg-teal-700">編集</x-primary-button>
-                            </a>
-                        </div>
-                        <div class="buttons">
                             <form method="post" action="{{route('post.destroy',$post)}}" style="display:inline-block;">
                             @csrf
                             @method('delete')
                                 <x-primary-button class="bg-red-700" onClick="return confirm('この投稿を削除しますか？')">削除</x-primary-button>
                             </form>
+                        </div>
+                        <div class="buttons">
+                            <a href="{{route('post.edit',$post)}}">
+                                <x-primary-button class="bg-teal-700">編集</x-primary-button>
+                            </a>
                         </div>
                     </div>
 

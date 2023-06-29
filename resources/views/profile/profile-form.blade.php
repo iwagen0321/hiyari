@@ -111,12 +111,12 @@
                 @endif
 
                 <div class="flex items-center justify-end mt-4">
-                    <x-primary-button class="ml-4">
-                        {{$button}}
-                    </x-primary-button>
                     <x-cancel2-button class="ml-4">
                         キャンセル
                     </x-cancel2-button>
+                    <x-primary-button class="ml-4 bg-teal-700">
+                        {{$button}}
+                    </x-primary-button>
 
                 </div>
             </form>
