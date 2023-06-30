@@ -42,7 +42,7 @@ class PostController extends Controller
     public function create()
     {
         $type = 'store';
-        $button = '投稿';
+        $button = '　投稿　';
         $title = '新規投稿';
 
         return view('post.form',compact('type','button','title'));
@@ -84,7 +84,7 @@ class PostController extends Controller
     public function edit(posts $post)
     {
         $type = 'update';
-        $button = '修正';
+        $button = '　修正　';
         $title = '投稿の修正';
 
         return view('post.form',compact('type','button','title','post'));

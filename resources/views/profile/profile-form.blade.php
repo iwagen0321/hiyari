@@ -114,10 +114,16 @@
                     <x-cancel2-button class="ml-4">
                         キャンセル
                     </x-cancel2-button>
-                    <x-primary-button class="ml-4 bg-teal-700">
-                        {{$button}}
-                    </x-primary-button>
 
+                    @if($type == 'update')
+                        <x-primary-button class="ml-4 bg-teal-700">
+                            {{$button}}
+                        </x-primary-button>
+                    @elseif($type == 'destroy')
+                        <x-primary-button class="ml-4 bg-red-700">
+                            {{$button}}
+                        </x-primary-button>
+                    @endif
                 </div>
             </form>
 

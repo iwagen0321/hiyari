@@ -29,7 +29,7 @@ class ProfileController extends Controller
     {
         $title = 'アカウント編集';
         $type = 'update';
-        $button = '更新';
+        $button = '　更新　';
         return view('profile.profile-form', compact('user','title','type','button'));
     }
 
@@ -76,7 +76,7 @@ class ProfileController extends Controller
     {
         $title = 'アカウント削除';
         $type = 'destroy';
-        $button = '削除';
+        $button = '　削除　';
         return view('profile.profile-form',compact('user','title','type','button'));
     }
 
