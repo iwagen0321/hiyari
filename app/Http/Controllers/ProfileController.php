@@ -22,6 +22,7 @@ class ProfileController extends Controller
         if(!empty($keyword)) {
             $users = User::where('employee_number', '=', "$keyword")
             ->orwhere('family_name', 'LIKE', "%{$keyword}%")
+            ->orwhere('division_name', 'LIKE', "%{$keyword}%")
             ->orderBy('employee_number','asc')->get();
         } else {
             $users = User::orderBy('employee_number','asc')->get();

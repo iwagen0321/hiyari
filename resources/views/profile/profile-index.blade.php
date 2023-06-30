@@ -19,7 +19,7 @@
 
     <div class="pb-6 flex justify-center">
         <form method="get" action="{{route('profile.index')}}">
-            <input type="text" placeholder="社員番号か名字を入力" name="keyword" id="keyword" value="{{$keyword}}">
+            <input class="input-box" type="text" placeholder="社員番号か名字か部署名を入力" name="keyword" id="keyword" value="{{$keyword}}">
             <input class="search-btn" type="submit" value="検索">
         </form>
     </div>
