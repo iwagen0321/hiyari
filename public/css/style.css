@@ -24,6 +24,19 @@ table {
     background-color:lightblue;
 }
 
+input.search-btn {
+    color: white;
+    background-color:rgb(100, 100, 100);
+    border-radius: 10px;
+    height:100%;
+    padding-left:10px;
+    padding-right:10px;
+}
+
+input.search-btn:hover{
+    background-color: rgb(50, 50, 50);
+}
+
 
 
 

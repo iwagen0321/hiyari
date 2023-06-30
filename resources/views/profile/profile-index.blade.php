@@ -13,9 +13,17 @@
         <x-message :message="session('message')"/>
     </x-slot>
 
-    <div class="py-12 flex justify-center">
+    <div class="py-6 flex justify-center">
         <x-account-button>アカウント登録</x-account-button>
     </div>
+
+    <div class="pb-6 flex justify-center">
+        <form method="get" action="{{route('profile.index')}}">
+            <input type="text" placeholder="社員番号か名字を入力" name="keyword" id="keyword" value="{{$keyword}}">
+            <input class="search-btn" type="submit" value="検索">
+        </form>
+    </div>
+
 
     <div class="flex justify-center">
 

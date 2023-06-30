@@ -15,10 +15,20 @@ use Illuminate\Validation\Rules;
 
 class ProfileController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $users = User::orderBy('employee_number','asc')->get();
-        return view('profile.profile-index',compact('users'));
+        $keyword = $request->input('keyword');
+
+        if(!empty($keyword)) {
+            $users = User::where('employee_number', '=', "$keyword")
+            ->orwhere('family_name', 'LIKE', "%{$keyword}%")
+            ->orderBy('employee_number','asc')->get();
+        } else {
+            $users = User::orderBy('employee_number','asc')->get();
+            $keyword = "";
+        }
+
+        return view('profile.profile-index',compact('users','keyword'));
     }
 
 
