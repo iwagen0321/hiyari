@@ -28,11 +28,19 @@
             </select>
         </form>
 
-        <form method="get" action="{{route('post.index')}}">
+        <form method="get" action="{{route('post.index')}}" class="no">
             <input class="input-box ml-12" type="text" placeholder="発生場所を検索" name="keyword" id="keyword" value="{{$keyword}}">
             <input class="search-btn" type="submit" value="検索">
         </form>
     </div>
+
+    <div class="pb-6 flex justify-center">
+        <form method="get" action="{{route('post.index')}}" class="none">
+            <input class="input-box" type="text" placeholder="発生場所を検索" name="keyword" id="keyword" value="{{$keyword}}">
+            <input class="search-btn" type="submit" value="検索">
+        </form>
+    </div>
+
 
     <div class="flex justify-center">
 
