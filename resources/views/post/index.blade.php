@@ -27,6 +27,11 @@
                 <option value="1" @if($filter == '1') selected @endif>対応求ム</option>
             </select>
         </form>
+
+        <form method="get" action="{{route('post.index')}}">
+            <input class="input-box ml-12" type="text" placeholder="キーワードを入力" name="keyword" id="keyword" value="{{$keyword}}">
+            <input class="search-btn" type="submit" value="検索">
+        </form>
     </div>
 
     <div class="flex justify-center">
