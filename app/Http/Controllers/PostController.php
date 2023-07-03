@@ -22,23 +22,22 @@ class PostController extends Controller
     public function index(Request $request)
     {
         $filter = $request->query('filter');
+        $keyword = $request->input('keyword');
 
         if($filter == '0') {
-            $posts = posts::where('response','=',"0")->orderBy('created_at','desc')->get();
+            $posts = posts::where('response','=',"0")
+            ->orderBy('created_at','desc')->get();
         } elseif ($filter == '1') {
-            $posts = posts::where('response','=',"1")->orderBy('created_at','desc')->get();
+            $posts = posts::where('response','=',"1")
+            ->orderBy('created_at','desc')->get();
         } else {
             $posts = posts::orderBy('created_at','desc')->get();
         }
-
-
-        $keyword = $request->input('keyword');
 
         if(!empty($keyword)) {
             $posts = posts::where('location', 'LIKE', "%{$keyword}%")
             ->orderBy('created_at','desc')->get();
         } else {
-            $posts = posts::orderBy('created_at','desc')->get();
             $keyword = "";
         }
 
