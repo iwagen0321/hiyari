@@ -29,7 +29,7 @@
         </form>
 
         <form method="get" action="{{route('post.index')}}">
-            <input class="input-box ml-12" type="text" placeholder="キーワードを入力" name="keyword" id="keyword" value="{{$keyword}}">
+            <input class="input-box ml-12" type="text" placeholder="発生場所を検索" name="keyword" id="keyword" value="{{$keyword}}">
             <input class="search-btn" type="submit" value="検索">
         </form>
     </div>
