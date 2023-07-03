@@ -31,7 +31,18 @@ class PostController extends Controller
             $posts = posts::orderBy('created_at','desc')->get();
         }
 
-        return view('post.index',compact('posts','filter'));
+
+        $keyword = $request->input('keyword');
+
+        if(!empty($keyword)) {
+            $posts = posts::where('location', 'LIKE', "%{$keyword}%")
+            ->orderBy('created_at','desc')->get();
+        } else {
+            $posts = posts::orderBy('created_at','desc')->get();
+            $keyword = "";
+        }
+
+        return view('post.index',compact('posts','filter','keyword'));
     }
 
     /**
