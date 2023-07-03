@@ -51,10 +51,10 @@
 
                 <div id="res1" class="pt-5">
                     <div class="pr-10 radio">
-                        <input type="radio" name="response" id="complete" value="0" {{ old('response') === '0' ? 'checked' : '' }} checked>対応済
+                        <input type="radio" name="response" id="response" value="1" {{ old('response') === '1' ? 'checked' : '' }} checked>対応求ム
                     </div>
                     <div class="radio">
-                        <input type="radio" name="response" id="response" value="1" {{ old('response') === '1' ? 'checked' : '' }}>対応求ム
+                        <input type="radio" name="response" id="complete" value="0" {{ old('response') === '0' ? 'checked' : '' }}>対応済
                     </div>
                 </div>
                 <div class="text-lg text-red-600 space-y-1">
