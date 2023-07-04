@@ -81,8 +81,8 @@ class PostController extends Controller
      */
     public function show(posts $post)
     {
-        $users = User::all();
-        return view('post.show',compact('post','users'));
+        $responder = $post->responder()->first();
+        return view('post.show',compact('post','responder'));
     }
 
     /**

@@ -10,7 +10,10 @@ class posts extends Model
 {
     use HasFactory;
     public function user() {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class,'user_id');
+    }
+    public function responder() {
+        return $this->belongsTo(User::class,'responder');
     }
 
     protected $fillable = [

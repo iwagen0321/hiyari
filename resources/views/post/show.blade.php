@@ -79,13 +79,9 @@
 
                 @if($post->response == 0)
 
-                    @foreach($users as $user)
-                        @if($user->id == $post->responder)
-                            <div class="responder-back">
-                                <p>対応者：{{$user->division_name}} {{$user->family_name}} {{$user->first_name}}</p>
-                            </div>
-                        @endif
-                    @endforeach
+                    <div class="responder-back">
+                        <p>対応者：{{$responder->division_name}} {{$responder->family_name}} {{$responder->first_name}}</p>
+                    </div>
                     
                     <div class="response-body">
                         <div>
