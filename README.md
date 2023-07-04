@@ -21,34 +21,40 @@
     - 端末をあまり使わない人でも分かりやすいようにできるだけ簡略化しています。
 
 
-## 実装環境
+## 機能一覧
+    GitHubからインストール
 
-GitHubからインストール
-↓
+    ↓
 
-composer install
-↓
+    composer install
 
-.envファイルの作成
-↓
+    ↓
 
-php artisan key:genetrate
-↓
+    .envファイルの作成
 
-php artisan migrate
-↓
+    ↓
 
-php artisan db:seed
-↓
+    php artisan key:genetrate
 
-npm install
-↓
+    ↓
 
-npm run dev
+    php artisan migrate
 
-ログインID：1001
+    ↓
 
-パスワード：tttt1001
+    php artisan db:seed
+
+    ↓
+
+    npm install
+
+    ↓
+    
+    npm run dev
+
+    ログインID：1001
+
+    パスワード：tttt1001
 
 
 ## 機能一覧
