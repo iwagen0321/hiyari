@@ -21,22 +21,36 @@
     - 端末をあまり使わない人でも分かりやすいようにできるだけ簡略化しています。
 
 
-## 使用までの流れ
+## 実装環境
 
 GitHubからインストール
+
 　↓
+
 composer install
+
 　↓
+
 .envファイルの作成
+
 　↓
+
 php artisan key:genetrate
+
 　↓
+
 php artisan migrate
+
 　↓
+
 php artisan db:seed
+
 　↓
+
 npm install
+
 　↓
+
 npm run dev
 
 
