@@ -30,6 +30,8 @@
 - php artisan db:seed
 - npm install
 - npm run dev
+
+
 - ログインID：1001
 - パスワード：tttt1001
 
