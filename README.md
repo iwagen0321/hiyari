@@ -22,21 +22,21 @@
 
 
 ## 使用までの流れ
-    - GitHubからインストール
-    　↓
-    - composer install
-    　↓
-    - .envファイルの作成
-    　↓
-    - php artisan key:genetrate
-    　↓
-    - php artisan migrate
-    　↓
-    - php artisan db:seed
-    　↓
-    - npm install
-    　↓
-    - npm run dev
+- GitHubからインストール
+　↓
+- composer install
+　↓
+- .envファイルの作成
+　↓
+- php artisan key:genetrate
+　↓
+- php artisan migrate
+　↓
+- php artisan db:seed
+　↓
+- npm install
+　↓
+- npm run dev
 
 
 ## 機能一覧
