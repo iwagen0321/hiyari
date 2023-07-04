@@ -26,18 +26,18 @@ class PostController extends Controller
 
         if($filter == '0') {
             $posts = posts::where('response','=',"0")
-            ->orderBy('created_at','desc')->get();
+            ->orderBy('created_at','desc');
         } elseif ($filter == '1') {
             $posts = posts::where('response','=',"1")
-            ->orderBy('created_at','desc')->get();
+            ->orderBy('created_at','desc');
         } else {
-            $posts = posts::orderBy('created_at','desc')->get();
+            $posts = posts::orderBy('created_at','desc');
         }
 
         if(!empty($keyword)) {
-            $posts = posts::where('location', 'LIKE', "%{$keyword}%")
-            ->orderBy('created_at','desc')->get();
+            $posts = $posts->where('location', 'LIKE', "%{$keyword}%")->get();
         } else {
+            $posts = $posts->get();
             $keyword = "";
         }
 

@@ -19,28 +19,20 @@
         <x-create-button>新規投稿</x-create-button>
     </div>
 
-    <div class="pb-6 flex justify-center">
-        <form method="get" action="{{route('post.index')}}">
-            <select name="filter" id="filter" onchange="this.form.submit()">
-                <option value="all" @if($filter == 'all') selected @endif>全件表示</option>
+    <form method="get" action="{{route('post.index')}}">
+        <div class="pb-2 flex justify-center">
+            <select name="filter" id="filter" onchange="submit(this.form)">
+                <option value="all" @if($filter == 'all') selected @endif>全件</option>
                 <option value="0" @if($filter == '0') selected @endif>対応済</option>
                 <option value="1" @if($filter == '1') selected @endif>対応求ム</option>
             </select>
-        </form>
-
-        <form method="get" action="{{route('post.index')}}" class="no">
-            <input class="input-box ml-12" type="text" placeholder="発生場所を検索" name="keyword" id="keyword" value="{{$keyword}}">
-            <input class="search-btn" type="submit" value="検索">
-        </form>
-    </div>
-
-    <div class="pb-6 flex justify-center">
-        <form method="get" action="{{route('post.index')}}" class="none">
-            <input class="input-box" type="text" placeholder="発生場所を検索" name="keyword" id="keyword" value="{{$keyword}}">
-            <input class="search-btn" type="submit" value="検索">
-        </form>
-    </div>
-
+        </div>
+        
+        <div class="pb-6 flex justify-center">
+            <input class="input-box ml-4" type="text" placeholder="発生場所を入力" name="keyword" id="keyword" value="{{$keyword}}">
+            <input class="search-btn" type="submit" value="検索">    
+        </div>
+    </form>
 
     <div class="flex justify-center">
 
