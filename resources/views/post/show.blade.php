@@ -80,7 +80,11 @@
                 @if($post->response == 0)
 
                     <div class="responder-back">
-                        <p>対応者：{{$responder->division_name}} {{$responder->family_name}} {{$responder->first_name}}</p>
+                        @if(empty($responder))
+                            <p>対応者：既に削除済みのユーザーです</p>
+                        @else
+                            <p>対応者：{{$responder->division_name}} {{$responder->family_name}} {{$responder->first_name}}</p>
+                        @endif
                     </div>
                     
                     <div class="response-body">
