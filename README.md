@@ -22,39 +22,39 @@
 
 
 ## 機能一覧
-    GitHubからインストール
+- GitHubからインストール
 
-    ↓
+↓
 
-    composer install
+- composer install
 
-    ↓
+↓
 
-    .envファイルの作成
+- .envファイルの作成
 
-    ↓
+↓
 
-    php artisan key:genetrate
+- php artisan key:genetrate
 
-    ↓
+↓
 
-    php artisan migrate
+- php artisan migrate
 
-    ↓
+↓
 
-    php artisan db:seed
+- php artisan db:seed
 
-    ↓
+↓
 
-    npm install
+- npm install
 
-    ↓
-    
-    npm run dev
+↓
 
-    ログインID：1001
+- npm run dev
 
-    パスワード：tttt1001
+- ログインID：1001
+
+- パスワード：tttt1001
 
 
 ## 機能一覧
