@@ -19,9 +19,26 @@
     - 投稿の編集は、投稿者か管理職員のみ編集が可能にしました。
     - ユーザーアカウントを削除しても投稿自体は残ります。
     - 端末をあまり使わない人でも分かりやすいようにできるだけ簡略化しています。
-    
- 
-    
+
+
+## 使用までの流れ
+    - GitHubからインストール
+    　↓
+    - composer install
+    　↓
+    - .envファイルの作成
+    　↓
+    - php artisan key:genetrate
+    　↓
+    - php artisan migrate
+    　↓
+    - php artisan db:seed
+    　↓
+    - npm install
+    　↓
+    - npm run dev
+
+
 ## 機能一覧
 - **一般社員画面側**
     - ログイン
