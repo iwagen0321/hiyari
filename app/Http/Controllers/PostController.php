@@ -19,11 +19,11 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index(Request $request, User $user)
     {
+        dd($user);
         $filter = $request->query('filter');
         $keyword = $request->input('keyword');
-
         $posts = new posts();
         list($posts, $keyword) = $posts->indexSearch($filter, $keyword);
 

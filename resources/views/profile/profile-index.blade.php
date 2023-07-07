@@ -40,7 +40,11 @@
                 <tr>
 
                     <td>{{$user->employee_number}}</td>
-                    <td>{{$user->family_name}} {{$user->first_name}}</td>
+                    <td class="underline decoration-1">
+                        <a href="{{route('post.index',$user)}}">
+                            {{$user->family_name}} {{$user->first_name}}
+                        </a>
+                    </td>
                     <td class="no">{{$user->division_name}}</td>
                     <td>
                         <a href="{{route('profile.edit',$user)}}">
