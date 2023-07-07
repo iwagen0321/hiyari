@@ -41,7 +41,7 @@
 
                     <td>{{$user->employee_number}}</td>
                     <td class="underline decoration-1">
-                        <a href="{{route('post.index',$user)}}">
+                        <a href="{{route('post.userIndex',$user)}}">
                             {{$user->family_name}} {{$user->first_name}}
                         </a>
                     </td>

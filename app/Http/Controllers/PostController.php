@@ -7,6 +7,8 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Requests\PostRequest;
 
+use function PHPUnit\Framework\isNull;
+
 class PostController extends Controller
 {
 
@@ -20,15 +22,23 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request, User $user)
-    {
-        dd($user);
+    {   
         $filter = $request->query('filter');
         $keyword = $request->input('keyword');
         $posts = new posts();
         list($posts, $keyword) = $posts->indexSearch($filter, $keyword);
 
-        return view('post.index',compact('posts','filter','keyword'));
+        return view('post.index',compact('posts','filter','keyword','user'));
     }
+
+    public function userIndex(User $user)
+    {   
+        $filter = null;
+        $keyword = null;
+        $posts = $user->posts;
+        return view('post.index',compact('posts','filter','keyword','user'));
+    }
+
 
     /**
      * Show the form for creating a new resource.

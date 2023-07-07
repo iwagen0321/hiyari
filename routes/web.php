@@ -16,7 +16,10 @@ use App\Http\Controllers\PostController;
 |
 */
 
+
+Route::get('/{user}/post',[PostController::class,'userIndex'])->name('post.userIndex');
 Route::resource('post',PostController::class);
+
 
 Route::get('/', function () {
     return view('auth.login');
