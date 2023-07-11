@@ -5,7 +5,11 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{$title}}
+            @if($type == 'update')
+                {{ Breadcrumbs::render('user_edit', $user, $title) }}
+            @elseif($type == 'destroy')
+                {{ Breadcrumbs::render('user_delete', $user, $title) }}
+            @endif
         </h2>
 
         <x-message :message="session('message')"/>

@@ -8,7 +8,11 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{$title}}
+            @if($type == 'store')
+                {{ Breadcrumbs::render('create', $title) }}
+            @else($type == 'update')
+                {{ Breadcrumbs::render('edit', $post, $title) }}
+            @endif
         </h2>
 
         <x-message :message="session('message')"/>
