@@ -110,6 +110,10 @@ input.search-btn:hover{
     width: 20%;
 }
 
+.none{
+    display: none;
+}
+
 @media(min-width:671px) {
 
     input.location-text{

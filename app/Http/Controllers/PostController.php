@@ -23,20 +23,22 @@ class PostController extends Controller
      */
     public function index(Request $request, User $user)
     {   
+        $type = 'index';
         $filter = $request->query('filter');
         $keyword = $request->input('keyword');
         $posts = new posts();
         list($posts, $keyword) = $posts->indexSearch($filter, $keyword);
 
-        return view('post.index',compact('posts','filter','keyword','user'));
+        return view('post.index',compact('posts','filter','keyword','type','user'));
     }
 
     public function userIndex(User $user)
     {   
+        $type = 'user_index';
         $filter = null;
         $keyword = null;
         $posts = $user->posts;
-        return view('post.index',compact('posts','filter','keyword','user'));
+        return view('post.index',compact('posts','filter','keyword','type','user'));
     }
 
 
