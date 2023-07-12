@@ -8,7 +8,11 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ Breadcrumbs::render('index') }}
+            @if($type == 'index')
+                <a href="{{route('post.index')}}">{{ Breadcrumbs::render('index') }}</a>
+            @elseif($type == 'user_index')
+                {{ Breadcrumbs::render('user_index',$user) }} 
+            @endif
         </h2>
 
         <x-message :message="session('message')"/>
@@ -58,7 +62,15 @@
                 <tr>
 
                     <td @if($post->response == 1) class="text-red-600 underline decoration-1 bg-red-100" @endif class="underline decoration-1">
-                        <a href="{{route('post.show',$post)}}">{{$post->location}}</a>
+                        @if($type == 'index')
+                            <a href="{{route('post.show',$post)}}">
+                                {{$post->location}}
+                            </a>
+                        @elseif($type == 'user_index')
+                            <a href="{{route('post.userShow',['user' => $user,'post' => $post])}}">
+                                {{$post->location}}
+                            </a>
+                        @endif
                     </td>
 
                     <td @if($post->response == 1) class="text-red-600 bg-red-100 no" @endif class="no">

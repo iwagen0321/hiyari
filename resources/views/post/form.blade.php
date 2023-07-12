@@ -10,8 +10,10 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             @if($type == 'store')
                 {{ Breadcrumbs::render('create', $title) }}
-            @else($type == 'update')
+            @elseif($type == 'update')
                 {{ Breadcrumbs::render('edit', $post, $title) }}
+            @elseif($type == 'user_update')
+                {{ Breadcrumbs::render('userEdit', $user, $post, $title) }}
             @endif
         </h2>
 
@@ -25,6 +27,9 @@
         @elseif($type == "update")
             <form class="form" method="post" action="{{route('post.'.$type,$post)}}" enctype="multipart/form-data">
             @method('patch')
+        @elseif($type == "user_update")
+            <form class="form" method="post" action="{{route('post.userUpdate',['user' => $user,'post' => $post])}}" enctype="multipart/form-data">
+            @method('patch')
         @endif
             @csrf
 
@@ -32,7 +37,11 @@
 
                 <div class="form-buttons">
                     <div class="buttons">
-                        <x-cancel-button>キャンセル</x-cancel-button>
+                        @if($type == "store" || $type == "update")
+                            <x-cancel-button>キャンセル</x-cancel-button>
+                        @elseif($type == "user_update")
+                            <x-cancel2-button>キャンセル</x-cancel-button>
+                        @endif
                     </div>
                     <div class="buttons">
                         <x-primary-button class="bg-green-700">{{$button}}</x-primary-button>

@@ -18,6 +18,9 @@ use App\Http\Controllers\PostController;
 
 
 Route::get('/{user}/post',[PostController::class,'userIndex'])->name('post.userIndex');
+Route::get('/{user}/post/{post}',[PostController::class,'userShow'])->name('post.userShow');
+Route::get('/{user}/post/{post}/edit',[PostController::class,'userEdit'])->name('post.userEdit');
+Route::patch('/{user}/post/{post}', [PostController::class, 'userUpdate'])->name('post.userUpdate');
 Route::resource('post',PostController::class);
 
 

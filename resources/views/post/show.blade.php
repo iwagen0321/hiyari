@@ -7,7 +7,11 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ Breadcrumbs::render('show', $post) }}
+            @if($type == 'show')
+                {{ Breadcrumbs::render('show', $post) }}
+            @elseif($type == 'userShow')
+                {{ Breadcrumbs::render('user_show', $user, $post) }}
+            @endif
         </h2>
 
         <x-message :message="session('message')"/>
@@ -35,9 +39,13 @@
                             </form>
                         </div>
                         <div class="buttons">
-                            <a href="{{route('post.edit',$post)}}">
-                                <x-primary-button class="bg-teal-700">編集</x-primary-button>
-                            </a>
+                            @if($type == 'show')
+                                <a href="{{route('post.edit',$post)}}">
+                            @elseif($type == 'userShow')
+                                <a href="{{route('post.userEdit',['user' => $user,'post' => $post])}}">
+                            @endif
+                                    <x-primary-button class="bg-teal-700">編集</x-primary-button>
+                                </a>
                         </div>
                     </div>
 

@@ -38,6 +38,7 @@ class PostController extends Controller
         $filter = null;
         $keyword = null;
         $posts = $user->posts;
+
         return view('post.index',compact('posts','filter','keyword','type','user'));
     }
 
@@ -65,7 +66,6 @@ class PostController extends Controller
     public function store(PostRequest $request)
     {
         $post = new posts();
-
         $post->insertPost($request);
         
         return redirect()->route('post.index')->with('message','投稿を完了しました');
@@ -79,9 +79,20 @@ class PostController extends Controller
      */
     public function show(posts $post)
     {
+        $type = 'show'; 
         $responder = $post->responder()->first();
-        return view('post.show',compact('post','responder'));
+
+        return view('post.show',compact('post','responder','type'));
     }
+
+    public function userShow(User $user,posts $post)
+    {
+        $type = 'userShow';
+        $responder = $post->responder()->first();
+
+        return view('post.show',compact('post','responder','type','user'));
+    }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -98,6 +109,16 @@ class PostController extends Controller
         return view('post.form',compact('type','button','title','post'));
     }
 
+    public function userEdit(User $user,posts $post)
+    {
+        $type = 'user_update';
+        $button = '　修正　';
+        $title = '投稿の修正';
+
+        return view('post.form',compact('type','button','title','post','user'));
+    }
+
+
     /**
      * Update the specified resource in storage.
      *
@@ -111,6 +132,14 @@ class PostController extends Controller
     
         return redirect()->route('post.show',compact('post'))->with('message','投稿を修正しました');
     }
+
+    public function userUpdate(Request $request, User $user, posts $post)
+    {
+        $post->insertPost($request);
+    
+        return redirect()->route('post.userShow',compact('user','post'))->with('message','投稿を修正しました');
+    }
+
 
     /**
      * Remove the specified resource from storage.
