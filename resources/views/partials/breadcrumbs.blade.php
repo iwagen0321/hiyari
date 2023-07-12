@@ -19,6 +19,7 @@
         }
         .Breadcrumb-ListGroup {
             display: flex;
+            flex-wrap: wrap;
         }
         .Breadcrumb-ListGroup-Item-Link[href]:hover {
             opacity: 0.5;
