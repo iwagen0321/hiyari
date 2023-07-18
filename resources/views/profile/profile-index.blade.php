@@ -31,7 +31,7 @@
 
             <tr>
                 <th>社員番号</th>
-                <th>社員名</th>
+                <th>社員名(投稿件数)</th>
                 <th class="no">部署名</th>
                 <th>操作</th>
             </tr>
@@ -40,9 +40,10 @@
                 <tr>
 
                     <td>{{$user->employee_number}}</td>
-                    <td class="underline decoration-1">
-                        <a href="{{route('post.userIndex',$user)}}">
-                            {{$user->family_name}} {{$user->first_name}}
+                    <td>
+                        {{$user->family_name}} {{$user->first_name}}
+                        <a href="{{route('post.userIndex',$user)}}" class="underline decoration-1">
+                            ({{count($user->posts)}}件)
                         </a>
                     </td>
                     <td class="no">{{$user->division_name}}</td>
