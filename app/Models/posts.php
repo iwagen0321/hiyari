@@ -77,9 +77,9 @@ class posts extends Model
         }
 
         if(!empty($keyword)) {
-            $posts = $posts->where('location', 'LIKE', "%{$keyword}%")->get();
+            $posts = $posts->where('location', 'LIKE', "%{$keyword}%")->paginate(5);
         } else {
-            $posts = $posts->get();
+            $posts = $posts->paginate(5);
             $keyword = "";
         }
 

@@ -89,7 +89,11 @@
                 </tr>
             @endforeach
 
-        </table>
-        
+        </table>        
     </div>
+    <div class="flex justify-center mt-6 mb-6">
+        {{ $posts->links('vendor.pagination.tailwind') }}
+    </div>
+
+   
 </x-app-layout>
